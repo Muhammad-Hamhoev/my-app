@@ -1,11 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import HeaderBlock from './components/HeaderBlock'
+
+import './index.css';
+
+const AppList = () => {
+	const items = ['First', 'Second'];
+	return (
+		<ul>
+			<li>{items[0]}</li>
+			<li>{items[1]}</li>
+		</ul>
+	);
+}
+
+const AppHeader = () => {
+	return (
+		<h1>Hello React</h1>
+	);
+}
+
+const App = () =>{
+	return(
+		<>
+			<HeaderBlock />
+			<AppHeader />
+			<AppList />
+			<AppHeader />
+			<AppList />
+		</>
+	);
+}
+
+const el = <App />
+
+ReactDOM.render(el, document.getElementById('root'));
